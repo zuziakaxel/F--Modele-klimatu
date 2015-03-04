@@ -1,0 +1,33 @@
+\documentclass{beamer}
+
+\begin{document}
+	\begin{frame}
+		\frametitle{This is the first slide}
+		%Content goes here
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{This is the second slide}
+		\framesubtitle{A bit more information about this}
+		%More content goes here
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Some background}
+		We start our discussion with some concepts.
+		\pause
+		The first concept we introduce originates with Erd\H os.
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{animacja}
+		\begin{itemize}
+			\item This one is always shown
+			\item<1-> The first time (i.e. as soon as the slide loads)
+			\item<2-> The second time
+			\item<1-> Also the first time
+			\only<1-1> {This one is shown at the first time, but it will hide soon (on the next event after the slide loads).}
+		\end{itemize}
+	\end{frame}
+	% etc
+\end{document}
