@@ -1,9 +1,0 @@
-Siema!
--wchodzisz w terminalu do tego folderu
--make install
--sudo easy_install Pygments
--kompilujesz: make
--wszystkie zmiany wprowadzasz w demo.tex i zapisujesz
-- kompilacja z terminala : make
--wszystkie fotki wrzucasz do folderu images i zalaczasz:
-\includegraphics[width=0.7\linewidth]{images/Figure1}
