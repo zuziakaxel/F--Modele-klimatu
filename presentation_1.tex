@@ -53,7 +53,7 @@ Fizyka Techniczna\\ % Your institution for the title page
 \addtobeamertemplate{footline}{%
 	\color{lightgr}% to color the progressbar
 	\hspace*{-\beamer@leftmargin}%
-	\rule{\beamer@leftmargin}{2pt}%
+	%\rule{\beamer@leftmargin}{0pt}%
 	\rlap{\rule{\dimexpr
 			\beamer@startpageofframe\dimexpr
 			\beamer@rightmargin+\textwidth\relax/\beamer@endpageofdocument}{3pt}} %grubosc paska
@@ -97,8 +97,8 @@ Klimat dzielimy na pięć części:
 \end{frame}
 
 
-\begin{frame}[fragile]
-	\frametitle{Sections}
+\begin{frame}
+	\frametitle{}
 	\begin{figure}[h]
 		\begin{center}
 			\includegraphics[width=0.7\linewidth]{images/Figure1}
@@ -107,38 +107,150 @@ Klimat dzielimy na pięć części:
 	\end{figure}
 \end{frame}
 
+\begin{frame}
+	\frametitle{Zerowymiarowy model cieplarniany}
+	\begin{figure}[h]
+		\begin{center}
+			\includegraphics[width=0.7\linewidth]{images/0D_Model.png}
+			\caption{Zerowymiarowy model bilansu promieniowania}
+		\end{center}
+	\end{figure}
 
-
-
-
-
-
-
-
-
-
-
-
-
+\end{frame}
 
 
 
 \begin{frame}
-\frametitle{Blocks of Highlighted Text}
-\begin{block}{Block 1}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
-\end{block}
-
-\begin{block}{Block 2}
-Pellentesque sed tellus purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum quis magna at risus dictum tempor eu vitae velit.
-\end{block}
-
-\begin{block}{Block 3}
-Suspendisse tincidunt sagittis gravida. Curabitur condimentum, enim sed venenatis rutrum, ipsum neque consectetur orci, sed blandit justo nisi ac lacus.
-\end{block}
+	\frametitle{Matematyczne spojrzenie na bilans energetyczny}
+	\begin{block}{Bardzo prosty model bilansu radiacyjnego}
+		\[(1-a)\frac{S}{4} = \sigma T_a^4 + t\sigma T_s^4
+		\]
+	\end{block}
+	\begin{block}{Bilans dla powierzchni Ziemi}
+		\[(-t_a)(1-a_s)\frac{S}{4}+c(T_s - T_a)+\sigma T_a^4 =0
+		\]
+	\end{block}
+	\begin{block}{Bilans dla atmosfery}
+		\[-(1- a_a-t_a+a_st_a)\frac{S}{4} - c(T_s - T_a) - \sigma T_s^4
+		(1-t_a^{'}-a_a^{'}) + 2\sigma T_a^4=0
+		\]
+	\end{block}
+	%Literką \it{a} oznaczamy albedo, natomiast \it{t} oznacza przepuszczalność. 
+	%odpowiednie indeksy oznaczają wartość dla atmosfery(a) lub powierzchni Ziemi(s).
+	\scriptsize{(Wartości z primem to wartości dla fal długich.)}
+	
 \end{frame}
 
-%------------------------------------------------
+\begin{frame}
+	\frametitle{Hipotetyczne przykłady}
+	\begin{itemize}
+		\item \textit{Współczesna Ziemia.} ($a=0,30, T_s=288K$)
+		\item \textit{Biała Ziemia.} ($a = 0,50;T_s=268K$)
+		\item \textit{Zima nuklearna.} ($a=0,35; T_s=284K$)
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Wymuszenie radiacyjne i sprzężenie zwrotne.}
+	\textbf{Wymuszeniem radiacyjnym} nazywamy zjawisko zmiany temperatury na powierzchni Ziemi celem wyrównania bilansu radiacyjnego. 
+	\begin{block}{Wzory do ilościowego opisu zmian temperatury}
+		\[\Delta I = \frac{\partial I}{\partial T_s}\Delta T_s
+		\]
+		\[\frac{\partial I}{\partial T_s} = \frac{4}{T_s}(1-a)\frac{S}{4}
+		\]
+		
+		%z tego modelu dI 3,1 W/m(-2)K(-1)
+		%z dokladniejszych 4,6 - efekt uwzglednienia sprzezenia zwrotnego
+	\end{block}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Przykłady zjawisk wpływających na globalne ocieplenie}
+
+	\textbf{Zjawiska mogące wzmagać globalne ocieplenie:}
+	\begin{enumerate}
+		\item Topienie się lodów i śniegów.
+		
+		\item Zwiększenie ilości pary wodnej w powietrzu. 
+		($t_a^{'}\nearrow; a_a^{'}\searrow$).
+		
+		\item Wzrost zachmurzenia.
+		
+		\item Wzrost $CO^2$ (mniejsza absorpcja przez oceany,
+		szybszy rozkład materii).
+		
+		\item Szybszy wzrost roślin i zmiana albedo.
+
+	\end{enumerate}
+
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Przykłady zjawisk wpływających na globalne ocieplenie}
+	
+	\textbf{Zjawiska mogące osłabiać globalne ocieplenie:}
+	
+	\begin{enumerate}
+		
+		\item Wzrost zawartości pary wodnej (średni spadek temperatury
+		z wysokością maleje).
+		
+		\item Wzmożony rozwój alg we wszystkich wodach (użycie $CO^2$ 
+		do fotosyntezy).
+		
+	\end{enumerate}
+	
+\end{frame}
+
+
+
+\begin{frame}
+	\frametitle{Opóźnienie czasowe ze względu na obecność oceanów}
+	
+	\begin{itemize}
+		\item Wysoka pojemność cieplna wody.
+		
+		\item Duża powierzchnia wód na Ziemi.
+		
+		\item Powolne zmiany temperatury.
+	
+	\end{itemize}
+	
+	\begin{block}{Zmiana temperatury w wyniku wymuszenia radiacyjnego}
+		\[\Delta T_s(t) = G_f\Delta I
+		\]
+	\end{block}
+	
+	\begin{block}{Ta sama zmiana po uwzględnieniu opóźnienia czasowego}
+		\[\Delta T_s(t) = G_f\Delta I(1-\exp^{-t/\tau _e})
+		\]
+	\end{block}
+	
+	$\tau _e \approx 50-100$ lat
+	
+\end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \begin{frame}
 \frametitle{Multiple Columns}
