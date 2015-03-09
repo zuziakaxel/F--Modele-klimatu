@@ -1,160 +1,127 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Beamer Presentation
-% LaTeX Template
-% Version 1.0 (10/11/12)
-%
-% This template has been downloaded from:
-% http://www.LaTeXTemplates.com
-%
-% License:
-% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND THEMES
-%----------------------------------------------------------------------------------------
-
 \documentclass{beamer}
 
 \mode<presentation> {
 
-% The Beamer class comes with a number of default slide themes
-% which change the colors and layouts of slides. Below this is a list
-% of all the themes, uncomment each in turn to see what they look like.
 
-%\usetheme{default}
-%\usetheme{AnnArbor}
-%\usetheme{Antibes}
-%\usetheme{Bergen}
-%\usetheme{Berkeley}
-%\usetheme{Berlin}
-%\usetheme{Boadilla}
-%\usetheme{CambridgeUS}
-%\usetheme{Copenhagen}
-%\usetheme{Darmstadt}
-%\usetheme{Dresden}
-%\usetheme{Frankfurt}
-%\usetheme{Goettingen}
-%\usetheme{Hannover}
-%\usetheme{Ilmenau}
-%\usetheme{JuanLesPins}
-%\usetheme{Luebeck}
-\usetheme{Madrid}
-%\usetheme{Malmoe}
-%\usetheme{Marburg}
-%\usetheme{Montpellier}
-%\usetheme{PaloAlto}
-%\usetheme{Pittsburgh}
-%\usetheme{Rochester}
-%\usetheme{Singapore}
-%\usetheme{Szeged}
-%\usetheme{Warsaw}
 
-% As well as themes, the Beamer class has a number of color themes
-% for any slide theme. Uncomment each of these in turn to see how it
-% changes the colors of your current slide theme.
 
-%\usecolortheme{albatross}
-%\usecolortheme{beaver}
-%\usecolortheme{beetle}
-%\usecolortheme{crane}
+%\usetheme{Antibes} %ok
+%\usetheme{Berlin} %ok
+%\usetheme{Boadilla} %ok
+\usetheme{Darmstadt} %ok
+%\usetheme{Dresden} %ok
+%\usetheme{Frankfurt} %ok
+%\usetheme{Ilmenau} %ok
+%\usetheme{Pittsburgh} %ok
+%\usetheme{Rochester} %ok
+
+
 %\usecolortheme{dolphin}
-%\usecolortheme{dove}
-%\usecolortheme{fly}
-%\usecolortheme{lily}
 %\usecolortheme{orchid}
-%\usecolortheme{rose}
-%\usecolortheme{seagull}
-%\usecolortheme{seahorse}
 %\usecolortheme{whale}
-%\usecolortheme{wolverine}
 
-%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
-%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
 
-%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+
 }
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[OT4]{polski}
+\usepackage{tabularx}
 
 \usepackage{graphicx} % Allows including images
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
 
-%----------------------------------------------------------------------------------------
-%	TITLE PAGE
-%----------------------------------------------------------------------------------------
 
-\title[Short title]{Full Title of the Talk} % The short title appears at the bottom of every slide, the full title is only on the title page
 
-\author{John Smith} % Your name
-\institute[UCLA] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+\title[Modelowanie klimatu]{Modelowanie klimatu} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{Axel Zuziak, Marcin Węglarz} % Your name
+\institute[AGH WFiIS]
 {
-University of California \\ % Your institution for the title page
+AGH WFiIS \\
+Fizyka Techniczna\\ % Your institution for the title page
 \medskip
-\textit{john@smith.com} % Your email address
 }
 \date{\today} % Date, can be changed to a custom date
 
 \begin{document}
-	%progress bar
-	%%-----------------------------------------------------------------------
-	%% progress bar in footline
-	%% http://www.mrunix.de/forums/showpost.php?p=316577&postcount=3
-	%% -----------------------------------------------------------------------
-	\definecolor{lightgr}{rgb}{0 0.4 0.9}
-	\makeatletter
-	\addtobeamertemplate{footline}{%
-		\color{lightgr}% to color the progressbar
-		\hspace*{-\beamer@leftmargin}%
-		\rule{\beamer@leftmargin}{2pt}%
-		\rlap{\rule{\dimexpr
-				\beamer@startpageofframe\dimexpr
-				\beamer@rightmargin+\textwidth\relax/\beamer@endpageofdocument}{3pt}} %grubosc paska
-		% next 'empty' line is mandatory!
-		
-		\vspace{0\baselineskip}
-		{}
-	} %koniec progress bara
+%progress bar in footline *************************************************************************
+
+\definecolor{lightgr}{rgb}{0 0.4 0.9}
+\makeatletter
+\addtobeamertemplate{footline}{%
+	\color{lightgr}% to color the progressbar
+	\hspace*{-\beamer@leftmargin}%
+	\rule{\beamer@leftmargin}{2pt}%
+	\rlap{\rule{\dimexpr
+			\beamer@startpageofframe\dimexpr
+			\beamer@rightmargin+\textwidth\relax/\beamer@endpageofdocument}{3pt}} %grubosc paska
+	% next 'empty' line is mandatory!
+	
+	\vspace{0\baselineskip}
+	{}
+} %koniec progress bara **************************************************************************************
 
 \begin{frame}
 \titlepage % Print the title page as the first slide
 \end{frame}
 
-\begin{frame}
-\frametitle{Overview} % Table of contents slide, comment this block out to remove it
-\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
-\end{frame}
+%\begin{frame}
+%\frametitle{Overview} % Table of contents slide, comment this block out to remove it
+%\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+%\end{frame}
 
 %----------------------------------------------------------------------------------------
 %	PRESENTATION SLIDES
 %----------------------------------------------------------------------------------------
 
 %------------------------------------------------
-\section{First Section} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
+%\section{First Section} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
 %------------------------------------------------
 
-\subsection{Subsection Example} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
+%\subsection{Subsection Example} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
 
 \begin{frame}
-\frametitle{Paragraphs of Text}
-Sed iaculis dapibus gravida. Morbi sed tortor erat, nec interdum arcu. Sed id lorem lectus. Quisque viverra augue id sem ornare non aliquam nibh tristique. Aenean in ligula nisl. Nulla sed tellus ipsum. Donec vestibulum ligula non lorem vulputate fermentum accumsan neque mollis.\\~\\
-
-Sed diam enim, sagittis nec condimentum sit amet, ullamcorper sit amet libero. Aliquam vel dui orci, a porta odio. Nullam id suscipit ipsum. Aenean lobortis commodo sem, ut commodo leo gravida vitae. Pellentesque vehicula ante iaculis arcu pretium rutrum eget sit amet purus. Integer ornare nulla quis neque ultrices lobortis. Vestibulum ultrices tincidunt libero, quis commodo erat ullamcorper id.
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Bullet Points}
+\frametitle{Co to jest klimat?}
+Klimatem nazywamy średnie warunki pogodowe obserwowane w danym miejscu na przestrzeni lat. Przykładowe czynniki: temperatura, opady, zachmurzenie, wilgotność.
+Modele klimatu są uproszonym opisem skomplikowanych procesów.
+Klimat dzielimy na pięć części:
 \begin{itemize}
-\item Lorem ipsum dolor sit amet, consectetur adipiscing elit
-\item Aliquam blandit faucibus nisi, sit amet dapibus enim tempus eu
-\item Nulla commodo, erat quis gravida posuere, elit lacus lobortis est, quis porttitor odio mauris at libero
-\item Nam cursus est eget velit posuere pellentesque
-\item Vestibulum faucibus velit a augue condimentum quis convallis nulla gravida
+	\item \textbf{Atmosfera} Gazowa część ponad powierzchnią ziemi.
+	\item \textbf{Hydrosfera} Wszystkie formy wody nad i pod powierzchnią ziemi.
+	\item \textbf{Kriosfera} Wszystkie formy wody w postaci lodu.
+	\item \textbf{Powierzchnia lądowa}
+	\item \textbf{Biosfera} Organizmy żyjące w hydrosferze oraz na powierzchni lądowej.
 \end{itemize}
 \end{frame}
 
-%------------------------------------------------
+
+\begin{frame}[fragile]
+	\frametitle{Sections}
+	\begin{figure}[h]
+		\begin{center}
+			\includegraphics[width=0.7\linewidth]{images/Figure1}
+			\caption{Czynniki definiujące i wpływające na klimat}
+		\end{center}
+	\end{figure}
+\end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \begin{frame}
 \frametitle{Blocks of Highlighted Text}
@@ -191,27 +158,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ul
 \end{columns}
 \end{frame}
 
-%------------------------------------------------
-\section{Second Section}
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Table}
-\begin{table}
-\begin{tabular}{l l l}
-\toprule
-\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
-\midrule
-Treatment 1 & 0.0003262 & 0.562 \\
-Treatment 2 & 0.0015681 & 0.910 \\
-Treatment 3 & 0.0009271 & 0.296 \\
-\bottomrule
-\end{tabular}
-\caption{Table caption}
-\end{table}
-\end{frame}
-
-%------------------------------------------------
 
 \begin{frame}
 \frametitle{Theorem}
@@ -220,41 +166,6 @@ $E = mc^2$
 \end{theorem}
 \end{frame}
 
-%------------------------------------------------
-
-\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
-\frametitle{Verbatim}
-\begin{example}[Theorem Slide Code]
-\begin{verbatim}
-\begin{frame}
-\frametitle{Theorem}
-\begin{theorem}[Mass--energy equivalence]
-$E = mc^2$
-\end{theorem}
-\end{frame}\end{verbatim}
-\end{example}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Figure}
-Uncomment the code on this slide to include your own image from the same directory as the template .TeX file.
-%\begin{figure}
-%\includegraphics[width=0.8\linewidth]{test}
-%\end{figure}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
-\frametitle{Citation}
-An example of the \verb|\cite| command to cite within the presentation:\\~
-
-This statement requires citation \cite{p1}.
-\end{frame}
-
-%------------------------------------------------
 
 \begin{frame}
 \frametitle{References}
@@ -267,12 +178,10 @@ This statement requires citation \cite{p1}.
 }
 \end{frame}
 
-%------------------------------------------------
 
 \begin{frame}
 \Huge{\centerline{The End}}
 \end{frame}
 
-%----------------------------------------------------------------------------------------
 
 \end{document} 
