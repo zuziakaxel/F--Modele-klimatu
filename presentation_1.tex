@@ -78,6 +78,7 @@ Fizyka Techniczna\\ % Your institution for the title page
 %Fizyka + równania
 %Implementacja tych równań 
 %Typy modeli (0,1,2,3 wymiarowe + kompletne)
+%s.60
 
 
 
@@ -270,6 +271,52 @@ Klimat dzielimy na pięć części:
 \end{frame}
 
 
+
+
+
+
+\begin{frame}
+	\frametitle{Model 3D - atmosfera v2.0}
+	\begin{block}{Prawa zachowania pędu}
+		
+		\[\frac{D\mathbf{v}}{Dt} = -2 \mathbf{\Omega} \times \mathbf{v} - \rho^{-1}
+			\nabla p + \mathbf{g} + \mathbf{F}
+		\]
+		
+	\end{block}
+	
+	\begin{block}{Prawo zachowania masy}
+		\[\frac{D\rho}{Dt} = -\rho\nabla \cdot \mathbf{v} + C - E
+		\]
+	\end{block}
+	
+	\begin{block}{Prawo zachowania energii}
+		\[\frac{DI}{Dt} = -p\frac{D\rho^{-1}}{Dt} + Q
+		\]
+	\end{block}
+	
+	\begin{block}{Równanie stanu gazu doskonałego}		
+		\[p=\rho RT
+		\]
+	\end{block}
+		
+
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Implementacja}
+	W celu implementacji naszych równań musimy im nadać wartości dyskretne.
+	Modelujemy atmosferę, dzieląc ją na pudła.
+	
+	\begin{figure}[h]
+		\begin{center}
+			\includegraphics[width=0.7\linewidth]{images/box.png}
+			\caption{Model podziału atmosfery na pudła.}
+		\end{center}
+	\end{figure}
+	
+\end{frame}
 
 
 
