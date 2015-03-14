@@ -169,15 +169,6 @@ Klimat dzielimy na pięć części:
 	
 \end{frame}
 
-\begin{frame}
-	\frametitle{Hipotetyczne przykłady}
-	\begin{itemize}
-		\item \textit{Współczesna Ziemia.} ($a=0,30, T_s=288K$)
-		\item \textit{Biała Ziemia.} ($a = 0,50;T_s=268K$)
-		\item \textit{Zima nuklearna.} ($a=0,35; T_s=284K$)
-	\end{itemize}
-	
-\end{frame}
 
 \begin{frame}
 	\frametitle{Wymuszenie radiacyjne i sprzężenie zwrotne.}
@@ -192,6 +183,176 @@ Klimat dzielimy na pięć części:
 		%z dokladniejszych 4,6 - efekt uwzglednienia sprzezenia zwrotnego
 	\end{block}
 \end{frame}
+
+
+\begin{frame}
+	\frametitle{Modelowanie oceanu}
+	TODO
+	
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Modelowanie kriosfery}
+	TODO
+	
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Modelowanie powierzchni ziemi}
+	TODO
+	
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Modelowanie zjawisk chemicznych w atmosferze}
+	TODO
+	
+\end{frame}
+
+
+
+\begin{frame}
+	\frametitle{Modelowanie atmosfery}
+	\begin{block}{Prawo zachowania pędu}
+		
+		\[\frac{D\mathbf{v}}{Dt} = -2 \mathbf{\Omega} \times \mathbf{v} - \rho^{-1}
+		\nabla p + \mathbf{g} + \mathbf{F}
+		\]
+		
+	\end{block}
+	
+	\begin{block}{Prawo zachowania masy}
+		\[\frac{D\rho}{Dt} = -\rho\nabla \cdot \mathbf{v} + C - E
+		\]
+	\end{block}
+	
+	\begin{block}{Prawo zachowania energii}
+		\[\frac{DI}{Dt} = -p\frac{D\rho^{-1}}{Dt} + Q
+		\]
+	\end{block}
+	
+	\begin{block}{Równanie stanu gazu doskonałego}		
+		\[p=\rho RT
+		\]
+	\end{block}
+	
+\end{frame}
+
+
+
+
+\begin{frame}
+	\frametitle{Modele klimatu}
+	Ogólnie modele klimatu możemy podzielić na:
+	\begin{itemize}
+		\item zerowymiarowe
+		\item 1-wymiarowe
+		\item 2-wymiarowe
+		\item 3-wymiarowe
+	\end{itemize}
+	\vspace{0.5cm}
+	Spośród powyższych najdokładniejsze są modele 3-wymiarowe, z których należy wyróżnić
+	\begin{itemize}
+		\item GCM (general circulation model), AGCM,OGCM,CGCM lub AOGCM
+		\item RCM (regional climate model)
+	\end{itemize}
+	
+\end{frame}
+
+
+
+\begin{frame}
+	\frametitle{Modele 1D/2D/3D}
+	\begin{enumerate}
+		\item Model 1D:
+		\begin{itemize}
+			\item Model RC (radiative-convectiv model). %s.131
+			
+			\item One-dimensional EBM (energy balance model). %s.95
+			%zależny od szerokości geograficznej, zmiana albedo, wymiana ciepła z sąsiadami, średnia temperatura strefowa
+		\end{itemize}
+		
+		\item Model 2D:
+		\begin{itemize}
+			\item Two-dimensional SD (statistical dynamical) climate model.
+			%height in the atmosphere and latitude
+			%zonally averaged values
+		\end{itemize}
+		
+		\item Model 3D:
+		\begin{itemize}
+			\item GCM (general circulation model)
+		\end{itemize}
+	\end{enumerate}
+	
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Przykład modelowania 2D}
+	
+	\begin{figure}[h]
+		\begin{center}
+			\includegraphics[width=0.4\linewidth]{images/2D_model.png}
+			\caption{Rysunek przedstawia średni roczny przepływ masy. a) obserwowany, b) przewidziany modelem}
+		\end{center}
+	\end{figure}
+	
+\end{frame}
+%zależńość od szerokości geograficznej oraz wysokości. implementuje podstawowe prawa (prawo zachowania momentu pędu, równowaga hydrostsatyczna, równowaga termodynamiczna, prawo ciągłości). średnie strefowe
+
+
+\begin{frame}
+	\frametitle{Implementacja}
+	W celu implementacji naszych równań musimy im nadać wartości dyskretne.
+	Modelujemy atmosferę, dzieląc ją na pudła.
+	
+	\begin{figure}[h]
+		\begin{center}
+			\includegraphics[width=0.7\linewidth]{images/box.png}
+			\caption{Model podziału atmosfery na pudła.}
+		\end{center}
+	\end{figure}
+	
+	%zajrzec na strone 170 \cite{b1} spectral model - nie wiem czy mowic o tym
+	%strona 187 opis 6 zmiennych i 6 rownan je opisujacych
+\end{frame}
+
+\begin{frame}
+	\frametitle{References}
+	\footnotesize{
+		\begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
+			\bibitem[McGuffie]{b1} K.McGuffie, A. Henderson-Sellers
+			\newblock A Climate Modelling Primer
+			
+		\end{thebibliography}
+	}
+\end{frame}
+
+
+\begin{frame}
+	\Huge{\centerline{The End}}
+\end{frame}
+%KONIEC
+\begin{frame}
+	\frametitle{Plan prezentacji}
+	\begin{enumerate}
+		\item Co to jest klimat.
+		\item Ważne pojęcia.
+		\item Model zerowymiarowy - rozgrzewka (???).
+		\item Modelowane zjawiska fizyczne (atmosfera, ocean ...).
+		\item Sprzężenia zwrotne i parametryzacja.
+		\item Rodzaje modeli + streszczenie.
+		\item Implementacja GCM.
+	\end{enumerate}
+\end{frame}
+
+
+
+
 
 
 \begin{frame}
@@ -266,44 +427,6 @@ Klimat dzielimy na pięć części:
 
 
 
-\begin{frame}
-	\frametitle{Implementacja}
-	W celu implementacji naszych równań musimy im nadać wartości dyskretne.
-	Modelujemy atmosferę, dzieląc ją na pudła.
-	
-	\begin{figure}[h]
-		\begin{center}
-			\includegraphics[width=0.7\linewidth]{images/box.png}
-			\caption{Model podziału atmosfery na pudła.}
-		\end{center}
-	\end{figure}
-	
-	%zajrzec na strone 170 \cite{b1} spectral model - nie wiem czy mowic o tym
-	%strona 187 opis 6 zmiennych i 6 rownan je opisujacych
-\end{frame}
-
-
-
-\begin{frame}
-	\frametitle{Modele klimatu}
-	Ogólnie możemy podzielić na modele:
-	\begin{itemize}
-		\item zerowymiarowe
-		\item 1-wymiarowe
-		\item 2-wymiarowe
-		\item 3-wymiarowe
-	\end{itemize}
-	\vspace{0.5cm}
-	Spośród powyższych najdokładniejsze są modele 3-wymiarowe, z których należy wyróżnić
-	\begin{itemize}
-		\item GCM (general circulation model), AGCM,OGCM,CGCM lub AOGCM
-		\item RCM (regional climate model)
-	\end{itemize}
-
-		
-
-\end{frame}
-
 
 \begin{frame}
 	\frametitle{TODO}
@@ -316,119 +439,14 @@ Klimat dzielimy na pięć części:
 \end{frame}
 
 
-\begin{frame}
-	\frametitle{Plan prezentacji}
-	\begin{enumerate}
-		\item Co to jest klimat.
-		\item Ważne pojęcia.
-		\item Model zerowymiarowy - rozgrzewka (???).
-		\item Modelowane zjawiska fizyczne (atmosfera, ocean ...).
-		\item Sprzężenia zwrotne i parametryzacja.
-		\item Rodzaje modeli + streszczenie.
-		\item Implementacja GCM.
-	\end{enumerate}
-\end{frame}
-
-
-
 
 \begin{frame}
-	\frametitle{Modelowanie oceanu}
-	TODO
-	
-\end{frame}
-
-
-\begin{frame}
-	\frametitle{Modelowanie kriosfery}
-	TODO
-	
-\end{frame}
-
-
-\begin{frame}
-	\frametitle{Modelowanie powierzchni ziemi}
-	TODO
-	
-\end{frame}
-
-
-\begin{frame}
-	\frametitle{Modelowanie zjawisk chemicznych w atmosferze}
-	TODO
-	
-\end{frame}
-
-
-
-\begin{frame}
-	\frametitle{Modelowanie atmosfery}
-	\begin{block}{Prawo zachowania pędu}
-		
-		\[\frac{D\mathbf{v}}{Dt} = -2 \mathbf{\Omega} \times \mathbf{v} - \rho^{-1}
-		\nabla p + \mathbf{g} + \mathbf{F}
-		\]
-		
-	\end{block}
-	
-	\begin{block}{Prawo zachowania masy}
-		\[\frac{D\rho}{Dt} = -\rho\nabla \cdot \mathbf{v} + C - E
-		\]
-	\end{block}
-	
-	\begin{block}{Prawo zachowania energii}
-		\[\frac{DI}{Dt} = -p\frac{D\rho^{-1}}{Dt} + Q
-		\]
-	\end{block}
-	
-	\begin{block}{Równanie stanu gazu doskonałego}		
-		\[p=\rho RT
-		\]
-	\end{block}
-	
-	
-\end{frame}
-
-
-
-\begin{frame}
-	\frametitle{Modele 1D/2D/3D}
-	\begin{enumerate}
-		\item Model 1D:
-		\begin{itemize}
-			\item Model RC (radiative-convectiv model). %s.131
-			\item One-dimensional EBM (energy balance model). %s.95
-		\end{itemize}
-		
-		\item Model 2D:
-		\begin{itemize}
-			\item Two-dimensional SD (statistical dynamical) climate model.
-			%height in the atmosphere and latitude
-			%zonally averaged values
-		\end{itemize}
-		
-		\item Model 3D:
-		\begin{itemize}
-			\item GCM (general circulation model)
-		\end{itemize}
-	\end{enumerate}
-	
-	
-	
-	
-\end{frame}
-
-
-\begin{frame}
-	\frametitle{Przykład modelowania 2D}
-	
-	\begin{figure}[h]
-		\begin{center}
-			\includegraphics[width=0.4\linewidth]{images/2D_model.png}
-			\caption{Rysunek przedstawia średni roczny przepływ masy. a) obserwowany, b) przewidziany modelem}
-		\end{center}
-	\end{figure}
-	
+	\frametitle{Hipotetyczne przykłady}
+	\begin{itemize}
+		\item \textit{Współczesna Ziemia.} ($a=0,30, T_s=288K$)
+		\item \textit{Biała Ziemia.} ($a = 0,50;T_s=268K$)
+		\item \textit{Zima nuklearna.} ($a=0,35; T_s=284K$)
+	\end{itemize}
 	
 \end{frame}
 
@@ -439,21 +457,7 @@ Klimat dzielimy na pięć części:
 
 
 
-\begin{frame}
-\frametitle{References}
-\footnotesize{
-\begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
-\bibitem[McGuffie]{b1} K.McGuffie, A. Henderson-Sellers
-\newblock A Climate Modelling Primer
 
-\end{thebibliography}
-}
-\end{frame}
-
-
-\begin{frame}
-\Huge{\centerline{The End}}
-\end{frame}
 
 
 \end{document} 
