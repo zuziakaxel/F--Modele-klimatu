@@ -31,7 +31,7 @@
 
 \usepackage{graphicx} % Allows including images
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
-
+\usepackage{verbatim}
 
 
 \title[Modelowanie klimatu]{Modelowanie klimatu} % The short title appears at the bottom of every slide, the full title is only on the title page
@@ -170,7 +170,7 @@ Modele klimatu są uproszonym opisem skomplikowanych procesów.
 	\begin{figure}[h]
 		\begin{center}
 			\includegraphics[width=0.7\linewidth]{images/0D_Model.png}
-			\caption{Zerowymiarowy model bilansu promieniowania}
+			\caption{Zerowymiarowy model bilansu promieniowania.\cite{b2}}
 		\end{center}
 	\end{figure}
 
@@ -185,7 +185,8 @@ Modele klimatu są uproszonym opisem skomplikowanych procesów.
 		\]
 	\end{block}
 	\begin{block}{Bilans dla powierzchni Ziemi}
-		\[(-t_a)(1-a_s)\frac{S}{4}+c(T_s - T_a)+\sigma T_a^4 =0
+		\[(-t_a)(1-a_s)\frac{S}{4}+c(T_s - T_a)+\sigma T_s^4(1-a_a^{'})
+		-\sigma T_a^4 =0
 		\]
 	\end{block}
 	\begin{block}{Bilans dla atmosfery}
@@ -320,42 +321,40 @@ Modele klimatu są uproszonym opisem skomplikowanych procesów.
 	
 \end{frame}
 
-
-
 \begin{frame}
-	\frametitle{Modele 1D/2D/3D}
-	\begin{enumerate}
-		\item Model 1D:
-		\begin{itemize}
-			\item Model RC (radiative-convectiv model). %s.131
-			
-			\item One-dimensional EBM (energy balance model). %s.95
-			%zależny od szerokości geograficznej, zmiana albedo, wymiana ciepła z sąsiadami, średnia temperatura strefowa
-		\end{itemize}
-		
-		\item Model 2D:
-		\begin{itemize}
-			\item Two-dimensional SD (statistical dynamical) climate model.
-			%height in the atmosphere and latitude
-			%zonally averaged values
-		\end{itemize}
-		
-		\item Model 3D:
-		\begin{itemize}
-			\item GCM (general circulation model)
-		\end{itemize}
-	\end{enumerate}
-	
+	\frametitle{Jednowymiarowy EBM(energy balance model)}	
+	\begin{figure}[h]
+		\begin{center}
+			\includegraphics[width=0.7\linewidth]{images/1D_EBM.png}
+			\caption{Schemat jednowymiarowego modelu bilansu energii.\cite{b3}}
+		\end{center}
+	\end{figure}
 \end{frame}
 
 
+
 \begin{frame}
-	\frametitle{Przykład modelowania 2D}
+	\frametitle{Jednowymiarowy RCM(radiative-convective model)}	
+	\begin{figure}[h]
+		\begin{center}
+			\includegraphics[width=0.6\linewidth]{images/1D_RC.png}
+			\caption{Schemat jednowymiarowego modelu radiacyjno-konwekcyjnego.\cite{b1}}
+		\end{center}
+	\end{figure}
+\end{frame}
+
+
+
+
+
+
+\begin{frame}
+	\frametitle{Przykład dwuwymiarowego modelu SD}
 	
 	\begin{figure}[h]
 		\begin{center}
 			\includegraphics[width=0.4\linewidth]{images/2D_model.png}
-			\caption{Rysunek przedstawia średni roczny przepływ masy. a) obserwowany, b) przewidziany modelem}
+			\caption{Rysunek przedstawia średni roczny przepływ masy. a) obserwowany, b) przewidziany modelem\cite{b1}}
 		\end{center}
 	\end{figure}
 	
@@ -364,14 +363,14 @@ Modele klimatu są uproszonym opisem skomplikowanych procesów.
 
 
 \begin{frame}
-	\frametitle{Implementacja}
+	\frametitle{Implementacja modelu GCM}
 	W celu implementacji naszych równań musimy im nadać wartości dyskretne.
 	Modelujemy atmosferę, dzieląc ją na pudła.
 	
 	\begin{figure}[h]
 		\begin{center}
 			\includegraphics[width=0.7\linewidth]{images/box.png}
-			\caption{Model podziału atmosfery na pudła.}
+			\caption{Model podziału atmosfery na pudła. Dopuszczamy wymiany wertykalne i horyzontalne.\cite{b1}}
 		\end{center}
 	\end{figure}
 	
@@ -404,8 +403,15 @@ Modele klimatu są uproszonym opisem skomplikowanych procesów.
 	\frametitle{References}
 	\footnotesize{
 		\begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
-			\bibitem[McGuffie]{b1} K.McGuffie, A. Henderson-Sellers
+			\bibitem[1]{b1}[1] K.McGuffie, A. Henderson-Sellers
 			\newblock A Climate Modelling Primer
+			\newblock John Wiley \& Sons, Chichester, wydanie trzecie, 2005
+			
+			\bibitem[2]{b2}[2] E. Boeker, R. Grondelle
+			\newblock Fizyka środowiska
+			\newblock PWN, Warszawa, 2002
+			
+			\bibitem[3]{b3}[3] https://www.e-education.psu.edu
 			
 		\end{thebibliography}
 	}
@@ -418,6 +424,8 @@ Modele klimatu są uproszonym opisem skomplikowanych procesów.
 %KONIEC
 
 
+\begin{comment}
+
 \begin{frame}
 	\frametitle{Plan prezentacji}
 	\begin{enumerate}
@@ -429,6 +437,33 @@ Modele klimatu są uproszonym opisem skomplikowanych procesów.
 		\item Rodzaje modeli + streszczenie.
 		\item Implementacja GCM.
 	\end{enumerate}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Modele 1D/2D/3D}
+	\begin{enumerate}
+		\item Model 1D:
+		\begin{itemize}
+			\item Model RC (radiative-convectiv model). %s.131
+			
+			\item One-dimensional EBM (energy balance model). %s.95
+			%zależny od szerokości geograficznej, zmiana albedo, wymiana ciepła z sąsiadami, średnia temperatura strefowa
+		\end{itemize}
+		
+		\item Model 2D:
+		\begin{itemize}
+			\item Two-dimensional SD (statistical dynamical) climate model.
+			%height in the atmosphere and latitude
+			%zonally averaged values
+		\end{itemize}
+		
+		\item Model 3D:
+		\begin{itemize}
+			\item GCM (general circulation model)
+		\end{itemize}
+	\end{enumerate}
+	
 \end{frame}
 
 
@@ -530,7 +565,7 @@ Modele klimatu są uproszonym opisem skomplikowanych procesów.
 
 
 
-
+\end{comment}
 
 
 
