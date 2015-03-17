@@ -109,6 +109,25 @@ AGCMs - \textit{(atmospheric) General Circulation Model} - \textbf{Model ogólne
 	\begin{equation}
 		\frac{\partial p}{\partial t} = -\overrightarrow{\nabla}(\overrightarrow{\rho v})
 	\end{equation}
+Zasada zachowania masy wody:
+\begin{equation}
+	\frac{D\rho q}{Dt} = -\vec{\nabla}(\rho\cdot\vec{v}\cdot q)+\rho(E-C)
+\end{equation}
+Gdzie E - parowaniem, a C- kondensacja.\\
+Pierwsza zasada termodynamiki:
+\begin{equation}
+	Q = c_p\frac{dT}{dt} - \frac{1}{\rho}\frac{dp}{dt}
+\end{equation}
+Q-ciepło na jednostę masy, $c_p$ -ciepło właściwe.\\
+Uproszczenia:
+\begin{itemize}
+	\item Równowaga hydrostatyczna - $\frac{\partial p}{dz} = \rho g$\\ Siła grawitacyjna jest równoważona przez gradient ciśnienia. Znacząco upraszcza równania ruchu pionowego.
+	\item Dodaje się równanie na siłę tarcia
+	\item To jest tylko dynamiczna część atmosfery. Do pełnych obliczeń potrzeba dodać jeszcze równania na wymianę ciepła powiązaną z parowaniem i kondensacją.
+	\item Problemy, które nie uwzględniają równania muszą zostać zparametryzowane dodając nowe człony do równań (2),(3),(4).
+	\item Warunki początkowe (brzegowe) opisują interakcje pomiędzy atmosferą, a innymi składnikami klimatu.
+	\item \end{itemize}
+$q$ - wilgotność jest zdefiniowana jako stosunek masy pary wodnej do masy 'suchego' powietrza w jednostce objętości
 
 
 \subsection{Skończona siatka}
@@ -156,8 +175,13 @@ Taki model jest używany zazwyczaj w OGCM, ale pierwszy model atmosfery był wyk
 		\item Wilgotność
 	\end{itemize}
 Prąd(pływ oceanu) jest wynikiem powyższych oraz ruchu obrotowego Ziemi.(Silny na zachodnie stronie basenów oceanu). Temperatura, zasolenie mają swoje maksima właśnie w centrum tych prądów. 
-Modele oceanu: dwuwymiarowe, trójwymiarowe.
-
+Modele oceanu: dwuwymiarowe, trójwymiarowe.\\
+Równania te same co do atmosfery, tylko bez wzoru na wilgotność. Wprowadzamy nowe równanie na zasolenie:
+\begin{equation}
+	\frac{dT}{dt	} = F_{solar} + F_{diff}
+\end{equation}
+$F_{solar}$ - absorbcja promieniowania w oceanie. $F_{diff}$ - obrazuje małe procesy, których model nie uwzględnia.
+Łatwiej przyjąć czasem inne współrzędne, używając izopyknów. (powierzchni o stałej gęstości).
 \section{Modelowanie Kriosfery}
 Najbardziej dynamicznym elementem są polarne lodowce. Taki model musi uwzględniać, pokrywę śnieżną, lodowce i lądolody. Słaba dokładność: procesy trwają kilkaset lat.
 Własności kriosfery:
