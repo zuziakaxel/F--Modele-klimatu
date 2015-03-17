@@ -150,7 +150,7 @@ Modele klimatu są uproszonym opisem skomplikowanych procesów.
 	\begin{figure}[h]
 		\begin{center}
 			\includegraphics[width=0.9\linewidth]{images/Figure1}
-			\caption{Czynniki definiujące i wpływające na klimat}
+			\caption{Czynniki definiujące i wpływające na klimat. [1]}
 		\end{center}
 	\end{figure}
 \end{frame}
@@ -160,7 +160,7 @@ Modele klimatu są uproszonym opisem skomplikowanych procesów.
 	\begin{figure}[h]
 		\begin{center}
 			\includegraphics[width=1.0\linewidth]{images/Figure9}
-			\caption{Proces tworzenia i weryfikowania modelu klimatu}
+			\caption{Proces tworzenia i weryfikowania modelu klimatu. [7]}
 		\end{center}
 	\end{figure}
 \end{frame}
@@ -235,69 +235,6 @@ Modele klimatu są uproszonym opisem skomplikowanych procesów.
 	\end{block}
 \end{frame}
 
-
-
-\begin{frame}
-	\frametitle{Modelowanie oceanu}
-	\begin{columns}
-		\begin{column}{0.5\textwidth}
-			Na ocean wpływa:
-			\begin{itemize}
-				\item Siła mechaniczna wiatru
-				\item Wypadkowy efekt gęstości i zasolenia wody
-				\item Wymiana ciepła z atmosferą
-				\item Wilgotność
-			\end{itemize}
-			Skutkiem ruchu obrotowego są prądy(pływy) oceanu.			
-			
-		\end{column}
-		\begin{column}{0.5\textwidth}
-			\begin{figure}[h]
-				\begin{center}
-					\includegraphics[width=0.8\linewidth]{images/Figure5.png}
-					\caption{Opis}
-				\end{center}
-			\end{figure}
-		\end{column}
-		
-	\end{columns}
-	
-	
-\end{frame}
-\begin{frame}
-	\frametitle{Modelowanie oceanu}
-\begin{block}{}
-\[\frac{dT}{dt} = F_{sol} + F_{diff}	\]
-\end{block}
-\begin{block}{}
-\[\frac{dS}{dt} = F_{diff}	\]
-\end{block}
-
-
-	
-	
-\end{frame}
-
-\begin{frame}
-	\frametitle{Modelowanie kriosfery}
-	Własności kriosfery:
-	\begin{itemize}
-		\item Śnieg i lód mają wysokie albedo - są istotne w globalnym bilansie ciepła. 
-		\item Zwiększają wymianę ciepła i gazów pomiędzy oceanami a atmosferą.
-	\end{itemize}
-\begin{block}{}
-\[ \rho_c c_{pc} \frac{\partial T_c}{\partial t} = k_c \frac{\partial^2 T_c}{\partial z^2}	
-\]	
-\end{block}
-\begin{block}{}
-\[ m\frac{d\vec{u_i}}{dt	} = \vec{\tau_{ai}} + \vec{\tau_{wi}} -m\vec{f}e_z\times\vec{u_i} - mg\vec{\nabla}\mu + \vec{F_{int}} 
-\]	
-\end{block}
-
-	
-\end{frame}
-
-%-------------------------Atmosfera------------------------------%
 \begin{frame}
 	\frametitle{Modelowanie atmosfery}
 	\begin{columns}
@@ -338,38 +275,100 @@ Modele klimatu są uproszonym opisem skomplikowanych procesów.
 \end{frame}
 
 \begin{frame}
-	\frametitle{Modelowanie atmosfery - opady}
-	\begin{block}{Prawo zachowania pędu}
+	\frametitle{Modelowanie oceanu}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			Na ocean wpływa:
+			\begin{itemize}
+				\item Siła mechaniczna wiatru
+				\item Wypadkowy efekt gęstości i zasolenia wody
+				\item Wymiana ciepła z atmosferą
+				\item Wilgotność
+			\end{itemize}		
+			
+		\end{column}
+		\begin{column}{0.5\textwidth}
+		\begin{block}{}
+			\[\frac{dT}{dt} = F_{sol} + F_{diff}	\]
+			\end{block}
+			\begin{block}{}
+			\[\frac{dS}{dt} = F_{diff}	\]
+			\end{block}
+
+
+		\end{column}
 		
-		\[\frac{D\mathbf{v}}{Dt} = -2 \mathbf{\Omega} \times \mathbf{v} - \rho^{-1}
-		\nabla p + \mathbf{g} + \mathbf{F}
-		\]
-		
-	\end{block}
+	\end{columns}
 	
-	\begin{block}{Prawo zachowania masy}
-		\[\frac{D\rho}{Dt} = -\rho\nabla \cdot \mathbf{v} + C - E
-		\]
-	\end{block}
-	
-	\begin{block}{Prawo zachowania energii}
-		\[\frac{DI}{Dt} = -p\frac{D\rho^{-1}}{Dt} + Q
-		\]
-	\end{block}
-	
-	\begin{block}{Równanie stanu gazu doskonałego}		
-		\[p=\rho RT
-		\]
-	\end{block}
 	
 \end{frame}
+\begin{frame}
+	\frametitle{Modelowanie oceanu}
+			\begin{figure}[h]
+				\begin{center}
+					\includegraphics[width=0.8\linewidth]{images/ocean.png}
+					\caption{Procesy małej skali uwzględnione jako $F_{diff}$. [7]}
+				\end{center}
+			\end{figure}
+
+	
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Modelowanie kriosfery}
+	Własności kriosfery:
+	\begin{itemize}
+		\item Śnieg i lód mają wysokie albedo - są istotne w globalnym bilansie ciepła. 
+		\item Zwiększają wymianę ciepła i gazów pomiędzy oceanami a atmosferą.
+	\end{itemize}
+\begin{block}{Śnieg i lód}
+\[ \rho_c c_{pc} \frac{\partial T_c}{\partial t} = k_c \frac{\partial^2 T_c}{\partial z^2}	
+\]	
+\end{block}
+\begin{block}{Dynamika lodu morskiego}
+\[ m\frac{d\vec{u_i}}{dt	} = \vec{\tau_{ai}} + \vec{\tau_{wi}} -m\vec{f}e_z\times\vec{u_i} - mg\vec{\nabla}\mu + \vec{F_{int}} 
+\]	
+\end{block}
+
+	
+\end{frame}
+\begin{frame}
+	\frametitle{Modelowanie kriosfery}
+				\begin{figure}[h]
+				\begin{center}
+					\includegraphics[width=0.8\linewidth]{images/ice.png}
+					\caption{Główne procesy lodu morskiego. [7]}
+				\end{center}
+			\end{figure}
+	
+\end{frame}
+\begin{frame}
+	\frametitle{Powierzchnia lądowa}
+			\begin{figure}[h]
+				\begin{center}
+					\includegraphics[width=0.8\linewidth]{images/lad.png}
+					\caption{Wymiana ciepła powierzchni lądowej. [7]}
+				\end{center}
+			\end{figure}
+	\begin{block}{Bilans ciepła}
+		\[ \rho c_p h_{su} \frac{\partial T_s}{\partial t} = (1-\alpha)F_{sol} + F_{IR\downarrow} + F_{IR\uparrow} + F_{SE} + L_f E + F_{cond}
+		\]
+	\end{block}
+	
+	
+\end{frame}
+%-------------------------Atmosfera------------------------------%
+
+
+
 
 \begin{frame}
 	\frametitle{Połączenie powyższych składników}
 	\begin{figure}[h]
 		\begin{center}
 			\includegraphics[width=0.6\linewidth]{images/Figure6.png}
-			\caption{Wymiana wielkości fizycznych pomiędzy składowymi modelu}
+			\caption{Wymiana wielkości fizycznych pomiędzy składowymi modelu. [1]}
 		\end{center}
 	\end{figure}
 \end{frame}
