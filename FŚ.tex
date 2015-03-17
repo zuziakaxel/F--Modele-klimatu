@@ -37,7 +37,8 @@
 
 \begin{document}
 \section{Co to jest klimat?}
-Klimatem nazywamy średnie warunki pogodowe obserwowane w danym miejscu na przestrzeni lat. Przykładowe czynniki: temperatura, opady, zachmurzenie, wilgotność.
+Klimatem nazywamy średnie warunki pogodowe obserwowane w danym miejscu na przestrzeni lat. \\
+Przykładowe czynniki: temperatura, opady, zachmurzenie, wilgotność.
 Modele klimatu są uproszonym opisem skomplikowanych procesów.
 Klimat dzielimy na pięć części:
 \begin{itemize}
@@ -68,6 +69,16 @@ Powyższe występują głównie w atmosferze. Ich zmiany prowadzą do zmiany kli
 \begin{ciekaw}
 IPPC - \textbf{Intergovernmental Panel on Climate Change} - organizacja założona w 1988 przez dwie organizacje Narodów Zjednoczonych – Światową Organizację Meteorologiczną (WMO) oraz Program Środowiskowy Organizacji Narodów Zjednoczonych (UNEP) w celu oceny ryzyka związanego z wpływem człowieka na zmianę klimatu.	
 \end{ciekaw}
+\subsection{Model klimatu}
+Ogólnie model klimatu jest zdefiniowany jako matematyczna reprezentacja klimatu oparta na fizycznych, biologicznych i chemicznych zasadach. Dane dostarczone są tak złożone, że muszą być rozwiązane numerycznie. Konsekwencją tego faktu jest dyskretyzacja przestrzeni i czasu. (Modele odnoszą się do danego regionu, którego rozmiar zależy od rozdzielczości).
+	\begin{figure}[h]
+		\begin{center}
+			\includegraphics[width=1.0\linewidth]{images/Figure9}
+			\caption{Proces tworzenia i weryfikowania modelu klimatu}
+		\end{center}
+	\end{figure}
+
+
 \section{Pionowa struktura atmosfery}
 Rozciąga się na całym obwodzie Ziemie (40000 km) i 100 km w górę.
 \begin{figure}[h]
@@ -88,6 +99,18 @@ AGCMs - \textit{(atmospheric) General Circulation Model} - \textbf{Model ogólne
 		\item prędkość i kierunek wiatru
 		\item temperaturę i wilgotność na różnych poziomach
 	\end{itemize}
+	Atmosferę opisuje siedem zmiennych opisanych za pomocą siedmiu równań. ($\overrightarrow{v} = (u,v,w)$, ciśnienie - $p$, temperatura $T$, wilgotność $q$, gęstość - $\rho$).\\
+	Zachowanie pędu ( z II zasady dynamiki Newtona):
+	\begin{equation}
+		\frac{D\overrightarrow{v}}{Dt} = -\frac{1}{\rho}\overrightarrow\nabla p - \overrightarrow{g} + \overrightarrow{F_{tarcia}} - 2\overrightarrow{\Omega}\times\overrightarrow{v}
+	\end{equation}
+	$\Omega$ - prędkość kątowa wektora Ziemi - siła Coriolisa. $F$ - siła tarcia\\
+	Zasada zachowania masa:
+	\begin{equation}
+		\frac{\partial p}{\partial t} = -\overrightarrow{\nabla}(\overrightarrow{\rho v})
+	\end{equation}
+
+
 \subsection{Skończona siatka}
 	Nie można dokładnie (analitycznie) rozwiązać równań ruchu powietrza w ogólnym przypadku. Numeryczne (komputerowe) rozwiązania wymagają dyskretyzacji za pomocą różnych przybliżeń numerycznych, np różnic skończonych, metod spektralnych lub elementów skończonych. Typowa rozdzielczość AGCM to 1-5 stopnia szerokości i długości geograficznej, czyli co około 100-500 km.
 	Symulowanie za pomocą pudeł jest jedną z najprostszych metod. Atmosfera zostaje zredukowana do pewnych zbiorów zmiennych równo rozmieszczonych w danych pudłach. Każda kolumna jest podzielona na rzędy(layers). Kolejne rzędy mają kształt terenu, na którym stoi kolumna(współrzędne sigma)
@@ -116,6 +139,12 @@ Taki model jest używany zazwyczaj w OGCM, ale pierwszy model atmosfery był wyk
 	Znajdują zastosowanie w modelowaniu atmosfery, ponieważ przyjmuje ona kształt okrągłej powłoki powietrza, co sugeruje użycie współrzędnych sferycznych.
 	Atmosfera jest podzielona na kawałki manipulowane jako fale. Co przyśpiesza i ułatwia obliczenia. Taki sposób jest wykorzystywany tylko przy wymianie poziomej. Przy pionowej nadal wygodnie jest używać siatki.  
 
+\subsection{Opis równań}
+\begin{itemize}
+	\item \textbf{Równanie gazu dosknałego}
+	\item \textbf{Zasada zachowania masy}\\
+		Materia nie może zostać 
+\end{itemize}
 
 
 \section{Modelowanie oceanu}

@@ -1,34 +1,24 @@
 \documentclass{beamer}
 
-\mode<presentation> {
-
-
-
-
-%\usetheme{Antibes} %ok
-%\usetheme{Berlin} %ok
-%\usetheme{Boadilla} %ok
-\usetheme{Darmstadt} %ok
-%\usetheme{Dresden} %ok
-%\usetheme{Frankfurt} %ok
-%\usetheme{Ilmenau} %ok
-%\usetheme{Pittsburgh} %ok
-%\usetheme{Rochester} %ok
-
-
-%\usecolortheme{dolphin}
-%\usecolortheme{orchid}
-%\usecolortheme{whale}
-
-
-
+\mode<presentation> {	
+	%\usetheme{Antibes} %ok
+	%\usetheme{Berlin} %ok
+	%\usetheme{Boadilla} %ok
+	\usetheme{Darmstadt} %ok
+	%\usetheme{Dresden} %ok
+	%\usetheme{Frankfurt} %ok
+	%\usetheme{Ilmenau} %ok
+	%\usetheme{Pittsburgh} %ok
+	%\usetheme{Rochester} %ok
+	
+	
+	%\usecolortheme{dolphin}
+	%\usecolortheme{orchid}
+	%\usecolortheme{whale}
 }
-
-
 \usepackage[utf8]{inputenc}
 \usepackage[OT4]{polski}
 \usepackage{tabularx}
-
 \usepackage{graphicx} % Allows including images
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
 \usepackage{verbatim}
@@ -37,7 +27,7 @@
 \title[Modelowanie klimatu]{Modelowanie klimatu} % The short title appears at the bottom of every slide, the full title is only on the title page
 
 \author{Axel Zuziak, Marcin Węglarz} % Your name
-\institute[AGH WFiIS]
+\institute[Akademia Górniczo-Hutnicza, WFiIS]
 {
 AGH WFiIS \\
 Fizyka Techniczna\\ % Your institution for the title page
@@ -159,12 +149,21 @@ Modele klimatu są uproszonym opisem skomplikowanych procesów.
 	\frametitle{}
 	\begin{figure}[h]
 		\begin{center}
-			\includegraphics[width=0.7\linewidth]{images/Figure1}
+			\includegraphics[width=0.9\linewidth]{images/Figure1}
 			\caption{Czynniki definiujące i wpływające na klimat}
 		\end{center}
 	\end{figure}
 \end{frame}
 
+\begin{frame}
+	\frametitle{Tworzenie modelu klimatu}
+	\begin{figure}[h]
+		\begin{center}
+			\includegraphics[width=1.0\linewidth]{images/Figure9}
+			\caption{Proces tworzenia i weryfikowania modelu klimatu}
+		\end{center}
+	\end{figure}
+\end{frame}
 
 \begin{frame}
 	\frametitle{Modele klimatu}
@@ -237,16 +236,6 @@ Modele klimatu są uproszonym opisem skomplikowanych procesów.
 \end{frame}
 
 
-\begin{frame}
-	\frametitle{Trójwymiarowy model klimatu}
-	\begin{figure}[h]
-		\begin{center}
-			\includegraphics[width=0.6\linewidth]{images/Figure6.png}
-			\caption{Wymiana wielkości fizycznych pomiędzy składowymi modelu}
-		\end{center}
-	\end{figure}
-\end{frame}
-
 
 \begin{frame}
 	\frametitle{Modelowanie oceanu}
@@ -275,7 +264,19 @@ Modele klimatu są uproszonym opisem skomplikowanych procesów.
 	
 	
 \end{frame}
+\begin{frame}
+	\frametitle{Modelowanie oceanu}
+\begin{block}{}
+\[\frac{dT}{dt} = F_{sol} + F_{diff}	\]
+\end{block}
+\begin{block}{}
+\[\frac{dS}{dt} = F_{diff}	\]
+\end{block}
 
+
+	
+	
+\end{frame}
 
 \begin{frame}
 	\frametitle{Modelowanie kriosfery}
@@ -284,18 +285,60 @@ Modele klimatu są uproszonym opisem skomplikowanych procesów.
 		\item Śnieg i lód mają wysokie albedo - są istotne w globalnym bilansie ciepła. 
 		\item Zwiększają wymianę ciepła i gazów pomiędzy oceanami a atmosferą.
 	\end{itemize}
-	\begin{figure}[h]
-		\begin{center}
-			\includegraphics[width=0.6\linewidth]{images/Figure7.png}
-			\caption{Najprostszy model to trójwarstowy model termodynamiczny}
-		\end{center}
-	\end{figure}
+\begin{block}{}
+\[ \rho_c c_{pc} \frac{\partial T_c}{\partial t} = k_c \frac{\partial^2 T_c}{\partial z^2}	
+\]	
+\end{block}
+\begin{block}{}
+\[ m\frac{d\vec{u_i}}{dt	} = \vec{\tau_{ai}} + \vec{\tau_{wi}} -m\vec{f}e_z\times\vec{u_i} - mg\vec{\nabla}\mu + \vec{F_{int}} 
+\]	
+\end{block}
+
 	
 \end{frame}
 
-
+%-------------------------Atmosfera------------------------------%
 \begin{frame}
 	\frametitle{Modelowanie atmosfery}
+	\begin{columns}
+\begin{column}{0.5\textwidth}
+		\begin{block}{Prawo zachowania pędu}
+			\[
+				\frac{D\vec{v}}{Dt} = -2 \Omega \times \vec{v} - \frac{1}{\rho}
+			\vec{\nabla} p + \vec{g} + \vec{F_{tar}}
+			\]
+		
+		\end{block}
+		
+		\begin{block}{Prawo zachowania masy}
+		\[
+			\frac{D\rho}{Dt} = -\rho\vec{\nabla} \cdot \vec{v}
+		\]
+		\end{block}
+		\begin{block}{Zasada zachowania masy wody}
+			\[
+				\frac{D\rho q}{Dt} = -(\rho\nabla \cdot q \cdot \vec{v}) + \rho(E-C)
+			\]
+
+	\end{block}
+	\end{column}
+	\begin{column}{0.5\textwidth}
+	Zmienne: $p$,$\rho$, $T$, $q$ oraz $\vec{v} =(u,v,w)$
+		\begin{block}{Prawo zachowania energii - I zasada termodynamiki}
+			\[Q = c_p\frac{dT}{dt} - \frac{1}{\rho}\frac{dp}{dt}
+			\]
+		\end{block}
+		
+		\begin{block}{Równanie stanu gazu doskonałego}		
+			\[p=\rho RT
+			\]
+		\end{block}
+	\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Modelowanie atmosfery - opady}
 	\begin{block}{Prawo zachowania pędu}
 		
 		\[\frac{D\mathbf{v}}{Dt} = -2 \mathbf{\Omega} \times \mathbf{v} - \rho^{-1}
@@ -321,8 +364,18 @@ Modele klimatu są uproszonym opisem skomplikowanych procesów.
 	
 \end{frame}
 
+\begin{frame}
+	\frametitle{Połączenie powyższych składników}
+	\begin{figure}[h]
+		\begin{center}
+			\includegraphics[width=0.6\linewidth]{images/Figure6.png}
+			\caption{Wymiana wielkości fizycznych pomiędzy składowymi modelu}
+		\end{center}
+	\end{figure}
+\end{frame}
 
 
+%-------------------------MARCIN------------------------------%
 
 
 \begin{frame}
@@ -454,7 +507,7 @@ Modele klimatu są uproszonym opisem skomplikowanych procesów.
 
 
 \begin{frame}
-	\frametitle{References}
+	\frametitle{Bibliografia}
 	\footnotesize{
 		\begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
 			\bibitem[1]{b1}[1] K.McGuffie, A. Henderson-Sellers
